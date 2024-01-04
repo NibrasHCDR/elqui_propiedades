@@ -1,0 +1,78 @@
+                
+                /*  CSS GRID SECCION1  */
+
+                   /*   SECCION1 MOBIL SCREEN  */
+                   @media screen and (min-width: 0px) and (max-width: 431px)  {
+                    .contenedor-seccion1{
+                        display: grid;
+                        grid-gap: 0.5rem;
+                        /* Creamos las columnas y sus medidad*/
+                        grid-template-columns: 1fr 1fr;
+                        /* Creamos las filas y sus valores de medidas*/
+                        grid-template-rows: 1fr;
+                      }
+  
+                      .seccion1-1{
+                        grid-column: 1/2;
+                        grid-row: 2/3;
+                        z-index: 2;
+                      }
+                      .seccion1-2{
+                        grid-column: 1/2;
+                        grid-row: 3/4;
+                        z-index: 2;
+                      }
+  
+                   }
+  
+                    /*   SECCION1 TABLET SCREEN  */
+                    @media screen and (min-width: 432px) and (max-width: 1023px) {
+                      .contenedor-seccion1{
+
+                      }
+                    }
+
+                    /*   SECCION1 DESKTOP L SCREEN  */
+                    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+                        .contenedor-seccion1{
+                            display: grid;
+                            grid-gap: .5rem;
+                            /* Creamos las columnas y sus medidad*/
+                            grid-template-columns: 1fr;
+                            /* Creamos las filas y sus valores de medidas*/
+                            grid-template-rows: 0.2fr 1fr;
+                          }
+      
+                          .seccion1-1{
+                            grid-column: 1/2;
+                            grid-row: 1/2;
+                          }
+                          .seccion1-2{
+                            grid-column: 1/2;
+                            grid-row: 2/3;
+                          }
+
+                    }
+  
+                    /*   SECCION1 DESKTOP XL SCREEN  */
+  
+                    @media screen and (min-width: 1440px) {
+                        .contenedor-seccion1{
+                            display: grid;
+                            grid-gap: .5rem;
+                            /* Creamos las columnas y sus medidad*/
+                            grid-template-columns: 1fr;
+                            /* Creamos las filas y sus valores de medidas*/
+                            grid-template-rows: 0.2fr 1fr;
+                          }
+      
+                          .seccion1-1{
+                            grid-column: 1/2;
+                            grid-row: 1/2;
+                          }
+                          .seccion1-2{
+                            grid-column: 1/2;
+                            grid-row: 2/3;
+                          }
+ 
+                    }
