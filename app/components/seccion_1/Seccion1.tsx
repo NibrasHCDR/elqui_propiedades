@@ -1,5 +1,7 @@
+"use client"
 import React from 'react'
 import Styles from './seccion1.module.css'
+import Swuip from '../Swuip'
 
 type Props = {}
 
@@ -7,7 +9,7 @@ function Seccion1({}: Props) {
   return (
     <div className="w-full h-screen bg-white">
 
-        <div className={`w-full h-full lg:p-24 md:p-10 p-4 ${Styles['contenedor-seccion1']}` }>
+        <div className={`w-full h-full lg:p-24 md:p-10 p-4 lg:space-y-8 space-y-4 ${Styles['contenedor-seccion1']}` }>
 
               <div className={` ${Styles['seccion1-1']}` }>
                     
@@ -33,8 +35,14 @@ function Seccion1({}: Props) {
                     
               </div>
 
-              <div className={`bg-red-400 ${Styles['seccion1-2']}` }>
-                  compa2
+              <div className={` ${Styles['seccion1-2']}` }>
+
+                <div className="w-[275px] md:w-[680px] lg:w-[890px] xl:w-[1150px] mx-auto">
+
+                 <Swuip />
+
+                </div>
+
               </div>
 
         </div>

@@ -1,0 +1,40 @@
+.swiperSlide{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+         /* DISEÑO CSS GRID INICIO*/
+
+                  /* DISEÑO CSS GRID INICIO*/
+            @media screen and (min-width: 0px) and (max-width: 431px) {
+               .swiperSlide img{
+                  height: 150px;
+                  width: 500px;
+                  object-fit: cover;
+                  object-position: center;
+               }
+                   }
+                     
+                     /* INICIO  para tabletas (426px a 768px) */
+                     @media screen and (min-width: 432px) and (max-width: 768px) {
+                        .swiperSlide img{
+                           height: 200px;
+                           width: 350px;
+                           object-fit: cover;
+                           object-position: center;
+                        }
+                   }
+                     
+
+                             /* ESCRITORIO XL*/
+                     @media screen and (min-width: 769px) {
+                        .swiperSlide img{
+                           height: 250px;
+                           width: 400px;
+                           object-fit: cover;
+                           object-position: center;
+                        }
+                     }

@@ -57,3 +57,38 @@ export async function getPortada() {
   )
 
 }
+
+
+export async function getTerrenos() {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "terrenos"]{
+      _id,
+      _createdAt,
+      "imagen_1": imagen_1.asset->url,
+      "imagen_2": imagen_2.asset->url,
+      "imagen_3": imagen_3.asset->url,
+      "imagen_4": imagen_4.asset->url,
+      "imagen_5": imagen_5.asset->url,
+      "imagen_6": imagen_6.asset->url,
+      nombre,
+      valor,
+      ubicacion,
+      metrosCuadrados,
+      cantidadCasas,
+      cantidadBanos,
+      cantidadDormitorios,
+      descripcion,
+      detalle
+    }`
+  )
+
+}
