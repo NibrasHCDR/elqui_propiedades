@@ -124,19 +124,6 @@ const casasSchema = {
             type: 'string'
         },
 
-        
-        {
-            name: 'livings',
-            title: 'Cantidad de sitios de Estar',
-            type: 'string'
-        },
-
-        {
-            name: 'comedor',
-            title: 'Cantidad de Comedores',
-            type: 'string'
-        },
-
         {
             name: 'descripcion',
             title: 'Descripción detallada de la Casa',

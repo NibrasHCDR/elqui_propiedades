@@ -13,6 +13,8 @@ export type CasasS = {
     valor: string;
     ubicacion: string;
     metrosCuadrados: string;
+    dormitorios: string;
+    banos: string;
     descripcion: string;
     detalle: PortableTextBlock[];
 }

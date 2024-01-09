@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import styles from './button-white.module.css'
+import styles from './button-black.module.css'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,25 +15,24 @@ import style from '../styles/swiper.module.css'
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import { FcSalesPerformance } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
-
-import { IoBed } from "react-icons/io5";
 import { AiOutlineAreaChart } from "react-icons/ai";
-import { TerrenosS } from '@/types/TerrenosS';
-import { getTerrenos } from '@/sanity/sanity-utils';
+import { FaBed, FaBath } from "react-icons/fa";
+
+import { getCasas } from '@/sanity/sanity-utils';
+import { CasasS } from '@/types/CasasS';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 1;
 
 export default function App() {
-  const [terreno, setTerreno] = useState<TerrenosS[]>([]);
+  const [casas, setCasas] = useState<CasasS[]>([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const terrenos = await getTerrenos();
-        setTerreno(terrenos);
+        const casas = await getCasas();
+        setCasas(casas);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -42,18 +41,18 @@ export default function App() {
     fetchData();
   }, []);
 
-  const slides = terreno.map((miterreno) => (
-    <SwiperSlide key={miterreno._id} className={` ${style.swiperSlide}`}>
+  const slides = casas.map((micasa) => (
+    <SwiperSlide key={micasa._id} className={` ${style.swiperSlide}`}>
       <div 
-      className="flex flex-col pb-12 mb-10 space-y-1 bg-black p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
+      className="flex flex-col pb-12 mb-10 space-y-1 bg-white p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
 
         <div className="">
      
           <Image
-            src={miterreno.imagen_1}
+            src={micasa.imagen_1}
             height={450}
             width={450}
-            alt={miterreno.imagen_1}
+            alt={micasa.imagen_1}
             layout={'cover'}
             objectFit={'cover'}
             className="w-full h-full cursor-grab no-select rounded-sm"
@@ -62,49 +61,81 @@ export default function App() {
 
         </div>
 
-        <div className="flex space-x-4 pt-4">
+        <div className="flex space-x-4 pt-4 justify-center">
 
-          <IoLocationSharp className="w-[40px] h-[40px] text-white">
+          <IoLocationSharp className="w-[40px] h-[40px] text-black">
           </IoLocationSharp>
 
-          <h1 className="mt-auto text-white xl:text-xl lg:text-lg text-sm font-bold">
-          {miterreno.ubicacion}
+          <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
+          {micasa.ubicacion}
           </h1>
 
         </div>
 
         <div className="pt-2">
-          <h2 className="text-white xl:text-2xl lg:text-xl text-md font-kanit">
-          {miterreno.nombre}
+          <h2 className="text-black xl:text-2xl lg:text-xl text-md font-kanit text-center">
+          {micasa.nombre}
           </h2>
         </div>
 
-        <div className="flex space-x-6 lg:space-x-10 xl:space-x-14 pt-4">
+        <div className="flex space-x-6 lg:space-x-10 xl:space-x-14 pt-4 justify-evenly">
 
           <div className="flex space-x-2">
 
-            <AiOutlineAreaChart className="w-[35px] h-[35px] text-white">
+            <FaBed className="w-[35px] h-[35px] text-black">
 
-            </AiOutlineAreaChart>
+            </FaBed>
 
 
-            <h1 className="text-white xl:text-2xl lg:text-xl text-lg font-kanit">
-            {miterreno.metrosCuadrados}
+            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit">
+            {micasa.dormitorios}
             </h1>
 
           </div>
 
 
-          <div className="flex space-x-2 text-white">
+          <div className="flex space-x-2 text-black">
 
-            <h1 className="text-white xl:text-2xl lg:text-xl text-lg font-kanit uppercase">
-            {miterreno.valor}
+            <FaBath className="w-[30px] h-[30px] text-black">
+
+            </FaBath>
+
+
+            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit">
+            {micasa.banos}
+            </h1>
+
+          </div>
+          
+        </div>
+
+        <div className="flex space-x-6 lg:space-x-10 xl:space-x-14 pt-4 justify-evenly">
+
+          <div className="flex space-x-2">
+
+            <AiOutlineAreaChart className="w-[30px] h-[30px] text-black">
+
+            </AiOutlineAreaChart>
+
+
+            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit">
+            {micasa.metrosCuadrados}
+            </h1>
+
+          </div>
+
+
+          <div className="flex space-x-2 text-black">
+
+            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit uppercase">
+            {micasa.valor}
             </h1>
 
           </div>
 
           
         </div>
+
 
        <div className="flex space-x-6 lg:space-x-10 xl:space-x-14 pt-4">
 

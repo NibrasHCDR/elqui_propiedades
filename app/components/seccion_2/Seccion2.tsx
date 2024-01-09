@@ -34,11 +34,11 @@ function Seccion1({}: Props) {
 
         <div 
         key={seccioncasas._id}
-        className={`w-full h-full lg:p-24 md:p-10 p-4 lg:space-y-8 space-y-4 ${Styles['contenedor-seccion2']}` }>
+        className={`w-full h-full lg:p-24 md:p-10 p-4 lg:space-y-8 ${Styles['contenedor-seccion2']}` }>
 
               <div className={` ${Styles['seccion2-1']}` }>
                     
-                    <div className="w-full h-full flex">
+                    <div className="w-full h-full md:flex grid items-center justify-center md:items-start md:justify-start">
 
                         <div className="flex items-center w-full h-full">
 
