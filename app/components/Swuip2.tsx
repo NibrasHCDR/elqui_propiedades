@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import styles from './button-black.module.css'
+import styles from './button-white.module.css'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -45,7 +45,7 @@ export default function App() {
   const slides = terreno.map((miterreno) => (
     <SwiperSlide key={miterreno._id} className={` ${style.swiperSlide}`}>
       <div 
-      className="flex flex-col pb-12 mb-10 space-y-1 bg-white p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
+      className="flex flex-col pb-12 mb-10 space-y-1 bg-black p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
 
         <div className="">
      
@@ -64,17 +64,17 @@ export default function App() {
 
         <div className="flex space-x-4 pt-4">
 
-          <IoLocationSharp className="w-[40px] h-[40px]">
+          <IoLocationSharp className="w-[40px] h-[40px] text-white">
           </IoLocationSharp>
 
-          <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
+          <h1 className="mt-auto text-white xl:text-xl lg:text-lg text-sm font-bold">
           {miterreno.ubicacion}
           </h1>
 
         </div>
 
         <div className="pt-2">
-          <h2 className="text-black xl:text-2xl lg:text-xl text-md font-kanit">
+          <h2 className="text-white xl:text-2xl lg:text-xl text-md font-kanit">
           {miterreno.nombre}
           </h2>
         </div>
@@ -83,21 +83,21 @@ export default function App() {
 
           <div className="flex space-x-2">
 
-            <AiOutlineAreaChart className="w-[35px] h-[35px] text-black">
+            <AiOutlineAreaChart className="w-[35px] h-[35px] text-white">
 
             </AiOutlineAreaChart>
 
 
-            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit">
+            <h1 className="text-white xl:text-2xl lg:text-xl text-lg font-kanit">
             {miterreno.metrosCuadrados}
             </h1>
 
           </div>
 
 
-          <div className="flex space-x-2 text-black">
+          <div className="flex space-x-2 text-white">
 
-            <h1 className="text-black xl:text-2xl lg:text-xl text-lg font-kanit uppercase">
+            <h1 className="text-white xl:text-2xl lg:text-xl text-lg font-kanit uppercase">
             {miterreno.valor}
             </h1>
 

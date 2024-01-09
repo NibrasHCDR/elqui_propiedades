@@ -1,11 +1,11 @@
-const terrenosSchema = {
-    name: 'terrenos',
-    title: '*Terrenos Publicados',
+const casasSchema = {
+    name: 'casas',
+    title: '*Casas Publicadas',
     type: 'document',
     fields: [
         {
             name: 'imagen_1',
-            title: 'Imagen Principal del Terreno',
+            title: 'Imagen Principal de la Casa',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -19,7 +19,7 @@ const terrenosSchema = {
 
         {
             name: 'imagen_2',
-            title: 'Imagen del Terreno (opcional)',
+            title: 'Imagen de la Casa (opcional)',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -33,7 +33,7 @@ const terrenosSchema = {
 
         {
             name: 'imagen_3',
-            title: 'Imagen del Terreno (opcional)',
+            title: 'Imagen de la Casa (opcional)',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -47,7 +47,7 @@ const terrenosSchema = {
 
         {
             name: 'imagen_4',
-            title: 'Imagen del Terreno (opcional)',
+            title: 'Imagen de la Casa (opcional)',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -61,7 +61,7 @@ const terrenosSchema = {
 
         {
             name: 'imagen_5',
-            title: 'Imagen del Terreno (opcional)',
+            title: 'Imagen de la Casa (opcional)',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -75,7 +75,7 @@ const terrenosSchema = {
 
         {
             name: 'imagen_6',
-            title: 'Imagen del Terreno (opcional)',
+            title: 'Imagen de la Casa (opcional)',
             type: 'image',
             options: {hotspot: true},
             fields: [
@@ -89,19 +89,19 @@ const terrenosSchema = {
 
         {
             name: 'nombre',
-            title: 'Nombre del Terreno',
+            title: 'Nombre de la Casa',
             type: 'string'
         },
 
         {
             name: 'valor',
-            title: 'Valor del Terreno',
+            title: 'Valor de la Casa',
             type: 'string'
         },
 
         {
             name: 'ubicacion',
-            title: 'ubicación o dirección del terreno',
+            title: 'ubicación o dirección de la Casa',
             type: 'string'
         },
 
@@ -112,8 +112,34 @@ const terrenosSchema = {
         },
 
         {
+            name: 'dormitorios',
+            title: 'Cantidad de Dormitorios',
+            type: 'string'
+        },
+
+        
+        {
+            name: 'banos',
+            title: 'Cantidad de Baños',
+            type: 'string'
+        },
+
+        
+        {
+            name: 'livings',
+            title: 'Cantidad de sitios de Estar',
+            type: 'string'
+        },
+
+        {
+            name: 'comedor',
+            title: 'Cantidad de Comedores',
+            type: 'string'
+        },
+
+        {
             name: 'descripcion',
-            title: 'Descripción detallada del Terreno',
+            title: 'Descripción detallada de la Casa',
             type: 'string'
         },
 
@@ -126,4 +152,4 @@ const terrenosSchema = {
     ]
 }
 
-export default terrenosSchema
+export default casasSchema

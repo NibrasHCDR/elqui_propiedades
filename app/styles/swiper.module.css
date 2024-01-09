@@ -6,6 +6,16 @@
    flex-direction: column;
 }
 
+.swiper-pagination-bullet {
+   background-color: #000; /* Color para bullets inactivos */
+}
+
+.swiper-pagination-bullet-active {
+   background-color: #fff; /* Color para el bullet activo */
+}
+
+ 
+
          /* DISEÑO CSS GRID INICIO*/
 
                   /* DISEÑO CSS GRID INICIO*/
@@ -38,3 +48,5 @@
                            object-position: center;
                         }
                      }
+
+

@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type TerrenosS = {
+export type CasasS = {
     _id: string;
     _createdAt: Date;
     imagen_1: string;

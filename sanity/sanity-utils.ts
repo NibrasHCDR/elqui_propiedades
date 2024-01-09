@@ -83,11 +83,52 @@ export async function getTerrenos() {
       valor,
       ubicacion,
       metrosCuadrados,
-      cantidadCasas,
-      cantidadBanos,
-      cantidadDormitorios,
       descripcion,
       detalle
+    }`
+  )
+
+}
+
+export async function getSeccion1() {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "seccion1"]{
+        _id,
+        _createdAt,
+        titulo1,
+        titulo2,
+        descripcion
+    }`
+  )
+
+}
+
+export async function getSeccion2() {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "seccion2"]{
+        _id,
+        _createdAt,
+        titulo1,
+        titulo2,
+        descripcion
     }`
   )
 
