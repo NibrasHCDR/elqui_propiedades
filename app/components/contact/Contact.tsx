@@ -6,7 +6,7 @@ import { Seccion1S } from '@/types/Seccion1S'
 import { getSeccion1 } from '@/sanity/sanity-utils'
 
 import { IoIosMailUnread } from "react-icons/io";
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 type Props = {}
 
@@ -35,17 +35,21 @@ function Contact({}: Props) {
 
       <div className={`w-full h-full lg:p-24 md:p-10 p-4 ${Styles['contenedor-contact']}` }>
 
-         <div className={`rounded-lg bg-gray-400 hover:scale-105 transition-all duration-300 ${Styles['contact-1']}` }>  
+         <div className={`rounded-lg bg-[#116FA0] hover:scale-105 transition-all duration-300 ${Styles['contact-1']}` }>  
 
-            <div className="flex flex-col w-full xl:h-[350px] lg:h-[250px] h-[150px] p-4 space-y-2 items-center">
+            <div className="flex flex-col w-full xl:h-[350px] lg:h-[200px] h-[150px] p-4 space-y-2 items-center">
 
-              <IoIosMailUnread className="w-[50px] h-[50px] text-white">
+            <div className="w-full h-auto items-center flex justify-center">
+               <IoIosMailUnread className="w-[50px] h-[50px] text-white">
                   
-              </IoIosMailUnread>
+               </IoIosMailUnread>
+
+            </div>
+
 
               <div className="w-auto h-auto">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 contacto@elquipropiedades.com
                 </h1>
                    
@@ -53,7 +57,7 @@ function Contact({}: Props) {
 
                <div className="w-auto h-autotext-center lg:pt-4">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Esté es un lore ipsum que se realiza de la <br />
                 de los lore ipsum consuming ispum <br />
                 ipsum ipusm lore impus
@@ -63,7 +67,7 @@ function Contact({}: Props) {
 
              <div className="w-auto h-auto lg:pt-16">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Learn More -
                 </h1>
                    
@@ -74,25 +78,30 @@ function Contact({}: Props) {
 
          </div>
 
-         <div className={`bg-blue-400 rounded-lg hover:scale-105 transition-all duration-300 ${Styles['contact-2']}` }>
+         <div className={`bg-[#26D367] rounded-lg hover:scale-105 transition-all duration-300 ${Styles['contact-2']}` }>
 
-          <div className="flex flex-col w-full xl:h-[350px] lg:h-[250px] h-[150px] p-4 space-y-2 items-center">
+          <div className="flex flex-col w-full xl:h-[350px] lg:h-[200px] h-[150px] p-4 space-y-2 items-center">
 
-              <FaWhatsapp className="w-[50px] h-[50px] text-white">
+          <div className="w-full h-auto items-center flex justify-center">
+          <FaWhatsapp className="w-[50px] h-[50px] text-white">
                   
-              </FaWhatsapp>
+          </FaWhatsapp>
+
+            </div>
+
+
 
               <div className="w-auto h-auto">
 
-                <h1 className="text-center text-white">
-                contacto@elquipropiedades.com
+                <h1 className="text-center text-white font-kanit">
+                (+569) 40898950
                 </h1>
                    
               </div>
 
                <div className="w-auto h-autotext-center lg:pt-4">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Esté es un lore ipsum que se realiza de la <br />
                 de los lore ipsum consuming ispum <br />
                 ipsum ipusm lore impus
@@ -102,7 +111,7 @@ function Contact({}: Props) {
 
              <div className="w-auto h-auto lg:pt-16">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Learn More -
                 </h1>
                    
@@ -113,25 +122,28 @@ function Contact({}: Props) {
 
         </div>
 
-        <div className={`bg-red-400 rounded-lg hover:scale-105 transition-all duration-300  ${Styles['contact-3']}` }>
+        <div className={`bg-gradient-to-br from-[#833ab4] to-[#fd1d1d] rounded-lg hover:scale-105 transition-all duration-300  ${Styles['contact-3']}` }>
 
-          <div className="flex flex-col w-full xl:h-[350px] lg:h-[250px] h-[150px] p-4 space-y-2 items-center">
+          <div className="flex flex-col w-full xl:h-[350px] lg:h-[200px] h-[150px] p-4 space-y-2 items-center">
 
-              <FaInstagram className="w-[50px] h-[50px] text-white">
+            <div className="w-full h-auto items-center flex justify-center">
+            <FaInstagram className="w-[50px] h-[50px] text-white">
                   
-              </FaInstagram>
+           </FaInstagram>
+
+            </div>
 
               <div className="w-auto h-auto">
 
-                <h1 className="text-center text-white">
-                contacto@elquipropiedades.com
+                <h1 className="text-center text-white font-kanit">
+                elquipropiedades
                 </h1>
                    
               </div>
 
                <div className="w-auto h-autotext-center lg:pt-4">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Esté es un lore ipsum que se realiza de la <br />
                 de los lore ipsum consuming ispum <br />
                 ipsum ipusm lore impus
@@ -141,7 +153,7 @@ function Contact({}: Props) {
 
              <div className="w-auto h-auto lg:pt-16">
 
-                <h1 className="text-center text-white">
+                <h1 className="text-center text-white font-kanit">
                 Learn More -
                 </h1>
                    
@@ -194,6 +206,22 @@ function Contact({}: Props) {
                 className="text-black w-full lg:min-h-[145px] border-2 rounded-md p-2"
                 value="Mensaje">
                 </textarea>
+
+            <div className="w-full h-auto flex space-x-3 justify-center items-center">
+
+              <FaWhatsapp className="w-[30px] h-[30px] cursor-pointer text-[#26D367]">
+                  
+              </FaWhatsapp>
+
+              <FaInstagram className="w-[30px] h-[30px] cursor-pointer text-[#E11436]">
+                  
+              </FaInstagram>
+
+              <FaFacebook className="w-[30px] h-[30px] cursor-pointer text-[#3B5999]">
+                  
+              </FaFacebook>
+               
+            </div>
 
               </div>
 
