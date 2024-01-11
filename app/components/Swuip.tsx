@@ -11,10 +11,11 @@ import styles from './button-black.module.css'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import style from '../styles/swiper.module.css'
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Scrollbar } from 'swiper/modules';
 import { FcSalesPerformance } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
 

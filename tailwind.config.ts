@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         kanit: ['Kanit','sans-serif'],
+        anton: ['Anton','sans-serif'],
+        oswald: ['Oswald','sans-serif'],
       },
     },
   },

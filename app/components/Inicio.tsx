@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 
-import styles from './button-white.module.css'
+import styles from './button-black.module.css'
 import { PortadaS } from '@/types/PortadaS';
 import { getPortada } from '@/sanity/sanity-utils';
 
@@ -32,26 +32,32 @@ function Inicio({}: Props) {
     
     <div 
     key={seccion._id}
-    className="w-full h-screen bg-img bg-bottom bg-cover">
+    className="w-full h-screen bg-bottom bg-cover " style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.postimg.cc/nhtYpTkN/bg1.jpg')`
+    }}>
 
-        <div className="w-full h-full p-24">
+        <div className="w-full h-full lg:p-24 md:p-10 p-4 no-select">
 
             <div className="w-full h-full flex flex-col space-y-4 justify-center items-center">
 
-              <div className="">
-              <h1 className="text-center text-white font-kanit xl:text-4xl lg:text-3xl md:text-2xl text-xl">
-                    {seccion.titulo1}
-                    <br></br> 
-                    <span className="">
-                      {seccion.titulo2}
-                    </span> 
+              <div className="flex flex-col space-y-4">
+              <h1 className="text-center text-white font-anton xl:text-4xl lg:text-3xl md:text-2xl text-xl">
+                    {seccion.titulo1} 
+                </h1>
+                <h1 className="text-center text-white font-anton xl:text-6xl lg:text-3xl md:text-2xl text-xl">
+                    {seccion.titulo2} 
                 </h1>
               </div>
 
-              <div className="w-auto h-auto">
-              <h1 className={`w-auto ${styles.button88}`}>
+              <div className="w-auto h-auto flex">
+
+                <div className="w-full h-full pt-4">
+                <h1 className={`w-auto h-auto ${styles.button88}`}>
                    {seccion.boton}
                 </h1>
+
+                </div>
+
               </div>
 
             </div>

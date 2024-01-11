@@ -3,6 +3,7 @@ import Inicio from '../app/components/Inicio'
 import Header from './components/Header'
 import Seccion1 from './components/seccion_1/Seccion1'
 import Seccion2 from './components/seccion_2/Seccion2'
+import Contact from './components/contact/Contact'
 
 export default function Home() {
   return (
@@ -21,6 +22,10 @@ export default function Home() {
 
       <section className="" id="seccion2">
         <Seccion2 />
+      </section>
+
+      <section className="" id="contact">
+        <Contact />
       </section>
     </>
   )
