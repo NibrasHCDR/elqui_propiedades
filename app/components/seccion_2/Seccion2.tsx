@@ -17,7 +17,7 @@ function Seccion1({}: Props) {
         const data = await getSeccion2();
         setSitewizardSecction(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al encontrar la sección --Seccion2--:', error);
       }
     }
 
@@ -42,7 +42,7 @@ function Seccion1({}: Props) {
 
                         <div className="flex items-center w-full h-full">
 
-                        <h1 className="font-oswald xl:text-4xl lg:text-3xl md:text-2xl text-xl">
+                        <h1 className="font-oswald xl:text-4xl lg:text-3xl md:text-2xl text-2xl">
                             {seccioncasas.titulo1}
                         </h1>
 
@@ -50,7 +50,7 @@ function Seccion1({}: Props) {
 
 
                         <div className="w-full h-full flex justify-end items-center">
-                            <h1 className="flex font-oswald xl:text-4xl lg:text-3xl md:text-2xl text-xl cursor-pointer hover:text-blue-400">
+                            <h1 className="flex font-oswald xl:text-4xl lg:text-3xl md:text-2xl text-2xl cursor-pointer hover:text-blue-400">
                             {seccioncasas.titulo2}
                             </h1>
                         </div>

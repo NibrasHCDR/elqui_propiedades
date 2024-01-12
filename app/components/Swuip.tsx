@@ -36,7 +36,7 @@ export default function App() {
         const terrenos = await getTerrenos();
         setTerreno(terrenos);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al encontrar --Terrenos--:', error);
       }
     }
 

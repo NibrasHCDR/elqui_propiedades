@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Seccion1 from './components/seccion_1/Seccion1'
 import Seccion2 from './components/seccion_2/Seccion2'
 import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
 
 export default function Home() {
   return (
@@ -26,6 +27,10 @@ export default function Home() {
 
       <section className="" id="contact">
         <Contact />
+      </section>
+
+      <section className="" id="footer">
+        <Footer />
       </section>
     </>
   )

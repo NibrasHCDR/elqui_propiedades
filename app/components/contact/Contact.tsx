@@ -1,26 +1,26 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Styles from './contact.module.css'
-import Swuip from '../Swuip'
-import { Seccion1S } from '@/types/Seccion1S'
-import { getSeccion1 } from '@/sanity/sanity-utils'
+import { getContacto} from '@/sanity/sanity-utils'
 
 import { IoIosMailUnread } from "react-icons/io";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
+import { ContactoS } from '@/types/ContactoS'
+import Link from 'next/link';
 
 type Props = {}
 
 function Contact({}: Props) {
 
-  const [sitewizardSecction, setSitewizardSecction] = useState<Seccion1S[]>([]); // Especifica el tipo de estado inicial aquí
+  const [sitewizardSecction, setSitewizardSecction] = useState<ContactoS[]>([]); // Especifica el tipo de estado inicial aquí
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await getSeccion1();
-        setSitewizardSecction(data);
+        const seccionContacto = await getContacto();
+        setSitewizardSecction(seccionContacto);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al encontrar la sección --Contacto--:', error);
       }
     }
 
@@ -33,7 +33,11 @@ function Contact({}: Props) {
     
     <div className="w-full h-full bg-white">
 
-      <div className={`w-full h-full lg:p-24 md:p-10 p-4 ${Styles['contenedor-contact']}` }>
+   {sitewizardSecction.map((seccioncontacto) => (
+
+      <div 
+      key={seccioncontacto._id}
+      className={`w-full h-full lg:p-24 md:p-10 p-4 ${Styles['contenedor-contact']}` }>
 
          <div className={`rounded-lg bg-[#116FA0] hover:scale-105 transition-all duration-300 ${Styles['contact-1']}` }>  
 
@@ -50,7 +54,7 @@ function Contact({}: Props) {
               <div className="w-auto h-auto">
 
                 <h1 className="text-center text-white font-kanit">
-                contacto@elquipropiedades.com
+                {seccioncontacto.titulo1}
                 </h1>
                    
               </div>
@@ -58,17 +62,15 @@ function Contact({}: Props) {
                <div className="w-auto h-autotext-center lg:pt-4">
 
                 <h1 className="text-center text-white font-kanit">
-                Esté es un lore ipsum que se realiza de la <br />
-                de los lore ipsum consuming ispum <br />
-                ipsum ipusm lore impus
+                {seccioncontacto.descripcion1}
                 </h1>
                    
               </div>
 
              <div className="w-auto h-auto lg:pt-16">
 
-                <h1 className="text-center text-white font-kanit">
-                Learn More -
+                <h1 className="text-center text-white font-kanit hover:text-black cursor-pointer hover:border-b-2 hover:border-black">
+                Enviar Correo ⟶
                 </h1>
                    
               </div>
@@ -94,7 +96,7 @@ function Contact({}: Props) {
               <div className="w-auto h-auto">
 
                 <h1 className="text-center text-white font-kanit">
-                (+569) 40898950
+                {seccioncontacto.titulo2}
                 </h1>
                    
               </div>
@@ -102,18 +104,17 @@ function Contact({}: Props) {
                <div className="w-auto h-autotext-center lg:pt-4">
 
                 <h1 className="text-center text-white font-kanit">
-                Esté es un lore ipsum que se realiza de la <br />
-                de los lore ipsum consuming ispum <br />
-                ipsum ipusm lore impus
+                {seccioncontacto.descripcion2}
                 </h1>
                    
               </div>
 
              <div className="w-auto h-auto lg:pt-16">
-
-                <h1 className="text-center text-white font-kanit">
-                Learn More -
+                <Link href={''}>
+                <h1 className="text-center text-white font-kanit hover:text-blue-800 cursor-pointer hover:border-b-2 hover:border-blue-800">
+                Enviár Mensaje de Whatsapp ⟶
                 </h1>
+                </Link>
                    
               </div>
 
@@ -136,7 +137,7 @@ function Contact({}: Props) {
               <div className="w-auto h-auto">
 
                 <h1 className="text-center text-white font-kanit">
-                elquipropiedades
+                {seccioncontacto.titulo3}
                 </h1>
                    
               </div>
@@ -144,18 +145,18 @@ function Contact({}: Props) {
                <div className="w-auto h-autotext-center lg:pt-4">
 
                 <h1 className="text-center text-white font-kanit">
-                Esté es un lore ipsum que se realiza de la <br />
-                de los lore ipsum consuming ispum <br />
-                ipsum ipusm lore impus
+                {seccioncontacto.descripcion3}
                 </h1>
                    
               </div>
 
              <div className="w-auto h-auto lg:pt-16">
 
-                <h1 className="text-center text-white font-kanit">
-                Learn More -
+                <Link href={''}>
+                <h1 className="text-center text-white font-kanit hover:text-black cursor-pointer hover:border-b-2 hover:border-black">
+                Ver en Instagram.com ⟶
                 </h1>
+                </Link>
                    
               </div>
 
@@ -170,12 +171,12 @@ function Contact({}: Props) {
 
               <div className="w-full h-auto space-y-2">
 
-                <h1 className="text-center text-black font-oswald xl:text-6xl lg:text-3xl md:text-2xl text-xl">
-                  Contáctame
+                <h1 className="text-center text-black font-oswald xl:text-7xl lg:text-5xl md:text-4xl text-3xl">
+                  {seccioncontacto.titulo4}
                 </h1>
 
-                <h1 className="text-center">
-                  Taths a lore ipsum to qe need to add a letters on the content for morte expresions
+                <h1 className="text-center font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl">
+                  {seccioncontacto.descripcion4}
                 </h1>
 
               </div>
@@ -189,22 +190,22 @@ function Contact({}: Props) {
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
-                value="Nombre">
+                value={seccioncontacto.nombre}>
                 </input>
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
-                value="Telefono o Correo">
+                value={seccioncontacto.telefonoCorreo}>
                 </input>
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
-                value="Asunto">
+                value={seccioncontacto.asunto}>
                 </input>
 
                 <textarea
-                className="text-black w-full lg:min-h-[145px] border-2 rounded-md p-2"
-                value="Mensaje">
+                className="text-black w-full lg:min-h[240px] lg:max-h-[240px] md:min-h-[240px] md:max-h-[240px] min-h-[200px] max-h-[200px] border-2 rounded-md p-2"
+                value={seccioncontacto.mensaje}>
                 </textarea>
 
             <div className="w-full h-auto flex space-x-3 justify-center items-center">
@@ -231,6 +232,8 @@ function Contact({}: Props) {
         </div>
 
        </div>
+
+))} 
 
     </div>
   )

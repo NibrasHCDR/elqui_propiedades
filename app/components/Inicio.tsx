@@ -17,7 +17,7 @@ function Inicio({}: Props) {
           const data = await getPortada();
           setSitewizardSecction(data);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error('Error al encontrar la sección --Portada--:', error);
         }
       }
   

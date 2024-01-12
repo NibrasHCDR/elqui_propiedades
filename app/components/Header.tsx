@@ -19,7 +19,7 @@ function Header({}: Props) {
         const data = await getHeader();
         setSitewizardSecction(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al encontrar la sección --Header--:', error);
       }
     }
 

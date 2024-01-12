@@ -166,3 +166,63 @@ export async function getCasas() {
   )
 
 }
+
+export async function getContacto() {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "contacto"]{
+      _id,
+      _createdAt,
+      titulo1,
+      descripcion1,
+      enlace1,
+      titulo2,
+      descripcion2,
+      enlace2,
+      titulo3,
+      descripcion3,
+      enlace3,
+      titulo4,
+      descripcion4,
+      nombre,
+      telefonoCorreo,
+      asunto,
+      mensaje,
+      descripcion,
+    }`
+  )
+
+}
+
+export async function getFooter() {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "footer"]{
+      _id,
+      _createdAt,
+      "logo": logo.asset->url,
+      texto1,
+      texto2,
+      texto3,
+      texto4,
+      descripcion,
+    }`
+  )
+
+}

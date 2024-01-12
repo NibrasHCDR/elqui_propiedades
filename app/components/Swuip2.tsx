@@ -34,7 +34,7 @@ export default function App() {
         const casas = await getCasas();
         setCasas(casas);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error al encontrar --Casas--:', error);
       }
     }
 

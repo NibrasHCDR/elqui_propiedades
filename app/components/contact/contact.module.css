@@ -9,7 +9,7 @@
                       /* Creamos las columnas y sus medidad*/
                       grid-template-columns: 1fr;
                       /* Creamos las filas y sus valores de medidas*/
-                      grid-template-rows: 0.7fr 0.7fr 0.7fr 1fr;
+                      grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
                     }
 
                     .contact-1{
