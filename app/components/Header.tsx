@@ -26,20 +26,41 @@ function Header({}: Props) {
     fetchData();
   }, []);
 
+  const handleButtonClick1 = () => {
+    const contactSecction = document.getElementById('seccion1');
+    if (contactSecction) {
+      contactSecction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  const handleButtonClick0 = () => {
-    const membershipsSection = document.getElementById('contacto');
-    if (membershipsSection) {
-      membershipsSection.scrollIntoView({ behavior: 'smooth' });
+  const handleButtonClick2 = () => {
+    const contactSecction = document.getElementById('seccion2');
+    if (contactSecction) {
+      contactSecction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+  const handleButtonClick3 = () => {
+    const contactSecction = document.getElementById('contact');
+    if (contactSecction) {
+      contactSecction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleButtonClickInicio = () => {
+    const contactSecction = document.getElementById('header');
+    if (contactSecction) {
+      contactSecction.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
     const [nav, setNav] = useState(false);
     const [color, setColor] = useState('transparent')
     const [textColor, setTextColor] = useState('white')
-    const [tamañoNav, setTamañoNav] = useState("w-full h-[115px] max-w- fixed left-0 top-0 z-10 ease-in duration-300")
-    const [tamañoLogo, setTamañoLogo] = useState("w-[130px] h-[90px] no-select hover:scale-105 transition-all duration-500 cursor-default")
-    const [tamañoTexto, setTamañoTexto] = useState("inline-block hover:scale-105 border-[#29F2CD] hover:text-[#49DB5F] lg:text-lg xl:text-xl text-xs pt-4 font-medium uppercase leading-normal text-primary transition-all duration-300 hover:bg-opacity-[2%]  hover:border-primary-600 focus:border-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:border-primary-700 active:text-primary-700 font-unicaone")
+    const [tamañoNav, setTamañoNav] = useState("w-full h-[115px] max-w- fixed left-0 top-0 z-10 transition-all duration-300")
+    const [tamañoLogo, setTamañoLogo] = useState("w-[130px] h-[90px] no-select duration-300 transition-all cursor-default cursor-pointer")
+    const [tamañoTexto, setTamañoTexto] = useState("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
 
 
     const handleNav = () => {
@@ -51,15 +72,15 @@ useEffect(() => {
         if(window.scrollY >= 90) {
             setColor('#010101')
             setTextColor('#F7F7F7')
-            setTamañoNav("w-full h-[90px] max-w-auto fixed left-0 top-0 z-10 shadow-xl ease-in duration-300")
-            setTamañoLogo("w-[90px] h-[70px] no-select hover:scale-105 transition-all duration-500 cursor-default")
-            setTamañoTexto("inline-block hover:scale-105 border-[#29F2CD] hover:text-[#49DB5F] lg:text-lg xl:text-xl text-xs pt-2 font-medium uppercase leading-normal text-primary transition-all duration-300 hover:bg-opacity-[2%] hover:border-primary-600 focus:border-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:border-primary-700 active:text-primary-700 font-unicaone")
+            setTamañoNav("w-full h-[90px] max-w-auto fixed left-0 top-0 z-10 shadow-xl transition-all duration-300")
+            setTamañoLogo("w-[90px] h-[70px] no-select hover:scale-105 transition-all duration-300 cursor-default cursor-pointer")
+            setTamañoTexto("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
         } else {
             setColor('transparent')
             setTextColor('#ffffff')
-            setTamañoNav("w-full h-[115px] fixed left-0 top-0 z-10 ease-in duration-300")
-            setTamañoLogo("w-[130px] h-[90px] no-select hover:scale-105 transition-all duration-500 cursor-default")
-            setTamañoTexto("inline-block hover:scale-105 border-[#29F2CD] hover:text-[#49DB5F] lg:text-lg xl:text-xl text-xs pt-4 font-medium uppercase leading-normal text-primary transition-all duration-300 hover:bg-opacity-[2%]  hover:border-primary-600 focus:border-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:border-primary-700 active:text-primary-700 font-unicaone")
+            setTamañoNav("w-full h-[115px] fixed left-0 top-0 z-10 transition-all duration-300")
+            setTamañoLogo("w-[130px] h-[90px] no-select hover:scale-105 transition-all duration-300 cursor-default cursor-pointer")
+            setTamañoTexto("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
         }
      };
      window.addEventListener('scroll', changeColor);
@@ -68,9 +89,9 @@ useEffect(() => {
 
   return (
     <motion.div 
-    initial={{ opacity: 0, x: -350 }}
-    animate={{ opacity: 1.2, x: 0 }}
-    transition={{ duration: 0.5, ease: [0.6, 0.05, 0.5, 0.95] }} // Duración de la animación
+    initial={{ opacity: 0, y: -250 }}
+    animate={{ opacity: 1.2, y: 0 }}
+    transition={{ duration: 1, ease: [0.6, 0.05, 0.5, 0.95] }} // Duración de la animación
     style={{backgroundColor: `${color}` }}
      className={tamañoNav}
      >
@@ -80,37 +101,40 @@ useEffect(() => {
         <div 
         key={seccion._id}
         className="max-w-[1240px] no-select mx-auto h-auto w-auto flex justify-between items-center p-4 text-white">
-            <Link href="https://xplendev.com/" className="no-select cursor-pointer">
-            <motion.img 
-              className={tamañoLogo + "cursor-pointer"}
+          <div className="cursor-pointer w-auto h-full">
+          <motion.img 
+            onClick={handleButtonClickInicio}
+              className={tamañoLogo}
               src={seccion.logo} alt={seccion.logo} 
               >
               </motion.img>
-            </Link>
-            <ul style={{color: `${textColor}`}} className="hidden sm:flex">
-                <li className="p-4">
-                <Link href="/obras">
+          </div>
+
+
+            <ul style={{color: `${textColor}`}} className="hidden sm:flex h-full">
+                <li className="p-4 h-[50px]">
                 <button type="button"
                         className={tamañoTexto}
+                        onClick={handleButtonClick1}
                         data-te-ripple-init>
                           {seccion.menu1}
                         </button>
-                </Link>
+
                 </li>
-                <li className="p-4">
-                <Link href={"/mundodigital"}>
+                <li className="p-4 h-[50px]">
+
                 <button type="button"
                         className={tamañoTexto}
+                        onClick={handleButtonClick2}
                         data-te-ripple-init>
                           {seccion.menu2}
                         </button>
-                </Link>
                 </li>
 
-                <li className="p-4">
+                <li className="p-4 h-[50px]">
                 <button type="button"
                         className={tamañoTexto}
-                        onClick={handleButtonClick0}
+                        onClick={handleButtonClick3}
                         data-te-ripple-init>
                           {seccion.menu3}
                         </button>
@@ -119,7 +143,7 @@ useEffect(() => {
             </ul>
 
             {/* Botones Móviles */}
-            <button onClick={handleNav} className="block sm:hidden z-10 hover:scale-150 hover:text-[#29F2CD] transition duration-150 ease-in-out">
+            <button onClick={handleNav} className="block sm:hidden z-10 hover:scale-150 hover:text-[#29F2CD] transition-all duration-75 ">
                 {nav
                  ? <AiOutlineClose size={25} /> 
                  : <AiOutlineMenu  size={25} style={{color: `${textColor}`}}
@@ -137,23 +161,23 @@ useEffect(() => {
                  >
             <ul>
             <Link href={"/obras"}>
-            <li>
-              <button onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
+            <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
+              <button onClick={handleButtonClick1}>
               {seccion.menu1}
               </button>
               </li>
               </Link>
 
               <Link href={"/mundodigital"}>
-              <li>
-              <button onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
+              <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
+              <button onClick={handleButtonClick2}>
               {seccion.menu2}
               </button>
               </li>
                 </Link>
 
                 <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
-                <button onClick={handleButtonClick0}>
+                <button onClick={handleButtonClick3}>
                 {seccion.menu3}
                 </button>
                 </li>

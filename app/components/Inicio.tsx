@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './button-black.module.css'
 import { PortadaS } from '@/types/PortadaS';
 import { getPortada } from '@/sanity/sanity-utils';
+import { motion } from 'framer-motion';
 
 type Props = {}
 
@@ -26,7 +27,9 @@ function Inicio({}: Props) {
 
   return (
 
-    <div className="w-full h-screen">
+    <motion.div 
+    className="w-full h-screen"
+    >
 
     {sitewizardSecction.map((seccion) => (
     
@@ -38,7 +41,11 @@ function Inicio({}: Props) {
 
         <div className="w-full h-full lg:p-24 md:p-10 p-4 no-select">
 
-            <div className="w-full h-full flex flex-col space-y-4 justify-center items-center">
+            <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1.2 }}
+             transition={{ duration: 0.7, ease: [0.6, 0.05, 0.5, 0.95] }}
+             className="w-full h-full flex flex-col space-y-4 justify-center items-center">
 
               <div className="flex flex-col space-y-4">
               <h1 className="text-center text-white font-anton xl:text-4xl lg:text-3xl md:text-2xl text-xl">
@@ -60,7 +67,7 @@ function Inicio({}: Props) {
 
               </div>
 
-            </div>
+            </motion.div>
         </div>
 
   
@@ -69,7 +76,7 @@ function Inicio({}: Props) {
 
 ))} 
 
-    </div>
+    </motion.div>
   )
 }
 

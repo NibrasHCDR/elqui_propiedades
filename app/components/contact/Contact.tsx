@@ -8,6 +8,8 @@ import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import { ContactoS } from '@/types/ContactoS'
 import Link from 'next/link';
 
+import styles from '../button-black.module.css'
+
 type Props = {}
 
 function Contact({}: Props) {
@@ -165,11 +167,11 @@ function Contact({}: Props) {
 
         </div>
 
-        <div className={`space-y-4 ${Styles['contact-4']}` }>
+        <div className={`space-y-12 ${Styles['contact-4']}` }>
          
             <div className="flex flex-col w-full h-auto">
 
-              <div className="w-full h-auto space-y-2">
+              <div className="w-full h-auto space-y-4">
 
                 <h1 className="text-center text-black font-oswald xl:text-7xl lg:text-5xl md:text-4xl text-3xl">
                   {seccioncontacto.titulo4}
@@ -186,7 +188,7 @@ function Contact({}: Props) {
 
             <div className="flex flex-col w-full h-full">
 
-              <div className="w-full h-auto space-y-2">
+              <div className="w-full h-auto space-y-4">
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
@@ -208,19 +210,17 @@ function Contact({}: Props) {
                 value={seccioncontacto.mensaje}>
                 </textarea>
 
-            <div className="w-full h-auto flex space-x-3 justify-center items-center">
+             <div className="w-auto h-auto flex space-x-3 justify-center items-center">
 
-              <FaWhatsapp className="w-[30px] h-[30px] cursor-pointer text-[#26D367]">
-                  
-              </FaWhatsapp>
+              <div className="w-auto h-full">
 
-              <FaInstagram className="w-[30px] h-[30px] cursor-pointer text-[#E11436]">
-                  
-              </FaInstagram>
+              <h1 className={` ${styles.button88}`}>
+                   Enviar Mensaje
+              </h1>
 
-              <FaFacebook className="w-[30px] h-[30px] cursor-pointer text-[#3B5999]">
-                  
-              </FaFacebook>
+              </div>
+
+
                
             </div>
 
@@ -228,6 +228,7 @@ function Contact({}: Props) {
 
 
             </div>
+
 
         </div>
 

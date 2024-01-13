@@ -5,6 +5,7 @@ import { getFooter } from '@/sanity/sanity-utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FooterS } from '@/types/FooterS'
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 type Props = {}
 
@@ -24,6 +25,13 @@ function Contact({}: Props) {
 
     fetchData();
   }, []);
+
+  const handleButtonClick1 = () => {
+    const contactSecction = document.getElementById('header');
+    if (contactSecction) {
+      contactSecction.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   
   return (
@@ -47,39 +55,61 @@ function Contact({}: Props) {
               >
         </Image>
         </div>
+        
+            <div className="w-full h-auto flex space-x-3 justify-center items-center">
 
-        <div className="w-full h-auto flex justify-center items-center space-x-4">
+              <FaWhatsapp className="w-[30px] h-[30px] cursor-pointer text-[#26D367]">
+                  
+              </FaWhatsapp>
 
-          <h1 className="cursor-pointer text-white hover:text-blue-400 transition-all duration-75">
-             Texto1
+              <FaInstagram className="w-[30px] h-[30px] cursor-pointer text-[#E11436]">
+                  
+              </FaInstagram>
+
+              <FaFacebook className="w-[30px] h-[30px] cursor-pointer text-[#3B5999]">
+                  
+              </FaFacebook>
+               
+            </div>
+
+        <div className="w-full h-[25px] flex justify-center items-center space-x-4">
+
+          <h1 
+          onClick={handleButtonClick1}
+          className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
+              {seccionfooter.texto1}
           </h1>
 
-          <h1 className="cursor-pointer text-white hover:text-blue-400 transition-all duration-75">
-             Texto2          
+          <h1 className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
+              {seccionfooter.texto2}         
           </h1>
 
-          <h1 className="cursor-pointer text-white hover:text-blue-400 transition-all duration-75">
-             Texto3       
+          <h1 className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
+              {seccionfooter.texto3}   
           </h1>
 
-          <h1 className="cursor-pointer text-white hover:text-blue-400 transition-all duration-75">
-             Texto4
+          <h1 className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
+              {seccionfooter.texto4}
           </h1>
           
         </div>
 
-        <div className="flex w-full h-auto justify-center items-center">
+        <div className="flex w-full h-[10px] justify-center items-center space-x-1">
 
             <h1 className="text-white">
 
             © 2024 Equi Propiedades | Code By  
-            <Link href={'https://xplendev.com/'}>
-            <span className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
-               Xplendev
-            </span>
-            </Link>
 
             </h1>
+
+            <Link href={'https://xplendev.com/'}>
+
+            <h1 className="cursor-pointer text-white hover:text-blue-400 hover:border-b-2 hover:border-b-blue-400 transition-all duration-75">
+            
+               Xplendev
+            
+            </h1>
+            </Link>
 
         </div>
 
