@@ -106,6 +106,12 @@ const casasSchema = {
         },
 
         {
+            name: 'ubicacionEnlace',
+            title: 'Enlace de Google Maps o Google Earth',
+            type: 'string'
+        },
+
+        {
             name: 'metrosCuadrados',
             title: 'Tamaño en Metros Cuadrados',
             type: 'string'

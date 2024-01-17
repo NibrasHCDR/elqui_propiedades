@@ -47,7 +47,7 @@ function Contact({}: Props) {
 
         <div className="w-full h-auto flex justify-center items-center">
         <Image
-              className={"w-[120px] h-[85px]"}
+              className={"w-[125px] h-[85px]"}
               width={125}
               height={85}
               src={seccionfooter.logo}

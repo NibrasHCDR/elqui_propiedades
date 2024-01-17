@@ -16,13 +16,12 @@ import style from '../styles/swiper.module.css'
 
 // import required modules
 import { Pagination, Scrollbar } from 'swiper/modules';
-import { FcSalesPerformance } from "react-icons/fc";
 import { IoLocationSharp } from "react-icons/io5";
 
-import { IoBed } from "react-icons/io5";
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { TerrenosS } from '@/types/TerrenosS';
 import { getTerrenos } from '@/sanity/sanity-utils';
+import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 1;
@@ -111,9 +110,11 @@ export default function App() {
 
           <div className="flex space-x-2 w-full justify-center items-center">
             
+          <Link href={`/terrenos/${miterreno.slug}`}>
           <h1 className={styles.button88}>
                    Ver más detalles
           </h1>
+          </Link>
 
 
           </div>

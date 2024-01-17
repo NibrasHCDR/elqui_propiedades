@@ -12,6 +12,7 @@ export type CasasS = {
     nombre: string; 
     valor: string;
     ubicacion: string;
+    ubiacionEnlace: string;
     metrosCuadrados: string;
     dormitorios: string;
     banos: string;

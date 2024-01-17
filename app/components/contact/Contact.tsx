@@ -112,7 +112,7 @@ function Contact({}: Props) {
               </div>
 
              <div className="w-auto h-auto lg:pt-16">
-                <Link href={''}>
+                <Link href={'https://api.whatsapp.com/send?phone=56994661560&text=Hola!%20me%20gustaría%20agendar%20una%20visita%20...'}>
                 <h1 className="text-center text-white font-kanit hover:text-blue-800 cursor-pointer hover:border-b-2 hover:border-blue-800">
                 Enviár Mensaje de Whatsapp ⟶
                 </h1>

@@ -92,6 +92,13 @@ const terrenosSchema = {
             title: 'Nombre del Terreno',
             type: 'string'
         },
+        
+        {
+            name: 'slug',
+            title: 'Identificador',
+            type: 'slug',
+            options: { source: 'nombre'}
+        },
 
         {
             name: 'valor',
@@ -101,7 +108,13 @@ const terrenosSchema = {
 
         {
             name: 'ubicacion',
-            title: 'ubicación o dirección del terreno',
+            title: 'Ubicación o dirección del terreno',
+            type: 'string'
+        },
+
+        {
+            name: 'ubicacionEnlace',
+            title: 'Enlace de Google Maps o Google Earth',
             type: 'string'
         },
 

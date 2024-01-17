@@ -12,16 +12,16 @@ function Seccion1({}: Props) {
   const [sitewizardSecction, setSitewizardSecction] = useState<Seccion1S[]>([]); // Especifica el tipo de estado inicial aquí
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchTerrenos() {
       try {
-        const data = await getSeccion1();
-        setSitewizardSecction(data);
+        const terrenos = await getSeccion1();
+        setSitewizardSecction(terrenos);
       } catch (error) {
         console.error('Error al encontrar la sección --Seccion1--:', error);
       }
     }
 
-    fetchData();
+    fetchTerrenos();
   }, []);
 
   

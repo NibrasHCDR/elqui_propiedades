@@ -10,8 +10,10 @@ export type TerrenosS = {
     imagen_5: string;
     imagen_6: string;
     nombre: string; 
+    slug: string,
     valor: string;
     ubicacion: string;
+    ubicacionEnlace: string;
     metrosCuadrados: string;
     descripcion: string;
     detalle: PortableTextBlock[];

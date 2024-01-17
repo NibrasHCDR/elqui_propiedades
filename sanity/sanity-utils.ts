@@ -3,6 +3,7 @@ import { createClient, groq } from "next-sanity";
 import { revalidatePath } from "next/cache";
 
 import {apiVersion, dataset, projectId} from '../sanity/env'
+import { TerrenosS } from "@/types/TerrenosS";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 1;
@@ -80,8 +81,10 @@ export async function getTerrenos() {
       "imagen_5": imagen_5.asset->url,
       "imagen_6": imagen_6.asset->url,
       nombre,
+      "slug": slug.current,
       valor,
       ubicacion,
+      ubicacionEnlace,
       metrosCuadrados,
       descripcion,
       detalle
@@ -157,6 +160,7 @@ export async function getCasas() {
       nombre,
       valor,
       ubicacion,
+      ubicacionEnlace,
       metrosCuadrados,
       dormitorios,
       banos,
@@ -223,6 +227,40 @@ export async function getFooter() {
       texto4,
       descripcion,
     }`
+  )
+
+}
+
+export async function getTerreno(slug: string) {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "terrenos" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      "imagen_1": imagen_1.asset->url,
+      "imagen_2": imagen_2.asset->url,
+      "imagen_3": imagen_3.asset->url,
+      "imagen_4": imagen_4.asset->url,
+      "imagen_5": imagen_5.asset->url,
+      "imagen_6": imagen_6.asset->url,
+      nombre,
+      "slug": slug.current,
+      valor,
+      ubicacion,
+      ubicacionEnlace,
+      metrosCuadrados,
+      descripcion,
+      detalle
+    }`,
+    { slug }
   )
 
 }

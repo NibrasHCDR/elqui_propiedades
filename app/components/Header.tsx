@@ -59,8 +59,7 @@ function Header({}: Props) {
     const [color, setColor] = useState('transparent')
     const [textColor, setTextColor] = useState('white')
     const [tamañoNav, setTamañoNav] = useState("w-full h-[115px] max-w- fixed left-0 top-0 z-10 transition-all duration-300")
-    const [tamañoLogo, setTamañoLogo] = useState("w-[130px] h-[90px] no-select duration-300 transition-all cursor-default cursor-pointer")
-    const [tamañoTexto, setTamañoTexto] = useState("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
+    const [tamañoLogo, setTamañoLogo] = useState("w-[130px] h-[90px] no-select hover:scale-105 transition-all duration-300 cursor-default cursor-pointer")
 
 
     const handleNav = () => {
@@ -74,13 +73,11 @@ useEffect(() => {
             setTextColor('#F7F7F7')
             setTamañoNav("w-full h-[90px] max-w-auto fixed left-0 top-0 z-10 shadow-xl transition-all duration-300")
             setTamañoLogo("w-[90px] h-[70px] no-select hover:scale-105 transition-all duration-300 cursor-default cursor-pointer")
-            setTamañoTexto("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
         } else {
             setColor('transparent')
             setTextColor('#ffffff')
             setTamañoNav("w-full h-[115px] fixed left-0 top-0 z-10 transition-all duration-300")
             setTamañoLogo("w-[130px] h-[90px] no-select hover:scale-105 transition-all duration-300 cursor-default cursor-pointer")
-            setTamañoTexto("inline-block cursor-pointer text-white hover:border-b-2 transition-all duration-300 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl")
         }
      };
      window.addEventListener('scroll', changeColor);
@@ -113,31 +110,31 @@ useEffect(() => {
 
             <ul style={{color: `${textColor}`}} className="hidden sm:flex h-full">
                 <li className="p-4 h-[50px]">
-                <button type="button"
-                        className={tamañoTexto}
+                <h1
+                        className="inline-block cursor-pointer text-white hover:border-b-2 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl"
                         onClick={handleButtonClick1}
-                        data-te-ripple-init>
+                        >
                           {seccion.menu1}
-                        </button>
+                        </h1>
 
                 </li>
                 <li className="p-4 h-[50px]">
 
-                <button type="button"
-                        className={tamañoTexto}
+                <h1
+                        className="inline-block cursor-pointer text-white hover:border-b-2 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl"
                         onClick={handleButtonClick2}
-                        data-te-ripple-init>
+                        >
                           {seccion.menu2}
-                        </button>
+                        </h1>
                 </li>
 
                 <li className="p-4 h-[50px]">
-                <button type="button"
-                        className={tamañoTexto}
+                <h1
+                        className="inline-block cursor-pointer text-white hover:border-b-2 font-oswald xl:text-3xl lg:text-2xl md:text-2xl text-xl"
                         onClick={handleButtonClick3}
-                        data-te-ripple-init>
+                        >
                           {seccion.menu3}
-                        </button>
+                        </h1>
                 </li>
 
             </ul>
@@ -160,21 +157,19 @@ useEffect(() => {
                 }
                  >
             <ul>
-            <Link href={"/obras"}>
+
             <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
               <button onClick={handleButtonClick1}>
               {seccion.menu1}
               </button>
               </li>
-              </Link>
 
-              <Link href={"/mundodigital"}>
+
               <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
               <button onClick={handleButtonClick2}>
               {seccion.menu2}
               </button>
               </li>
-                </Link>
 
                 <li onClick={handleNav} className="p-4 text-4xl font-kanit hover:text-[#29F2CD] transition duration-150 ease-in-out hover:scale-125">
                 <button onClick={handleButtonClick3}>
