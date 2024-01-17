@@ -48,7 +48,7 @@ function Terreno({ params }: Props) {
             <div className=" h-screen w-full flex justify-center items-center bg-white">
 
             <Image
-              className={"w-[150px] h-[190px]"}
+              className={"w-[150px] h-[150px]"}
               width={125}
               height={85}
               src="https://i.postimg.cc/ZR1gbyZ3/loading.png"
