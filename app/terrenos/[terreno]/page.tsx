@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 
 
 import Image from "next/image";
+import Footer from "@/app/components/footer/Footer";
 type Props = {
     params: { terreno: string };
 };
@@ -61,7 +62,34 @@ function Terreno({ params }: Props) {
     }
 
     return (
-        <div className="w-full h-screen flex bg-white">
+        <div className="w-full h-screen flex flex-col bg-white relative">
+
+            <motion.div 
+            className="absolute bg-black w-full h-[80px] flex"
+            initial={{ opacity: 0, y: -120 }}
+            animate={{ opacity: 1.2, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.6, 0.05, 0.5, 0.95] }}
+            >
+
+            <motion.div 
+            className="w-full h-auto flex justify-center">
+
+            <Link href={""}>
+            <motion.img 
+              className="p-2 h-[75px] w-auto flex cursor-pointer"
+              src={"https://i.postimg.cc/Y0vfMVvR/logo-elquipropiedades.png"} 
+              alt={"Elqui Propiedades"} 
+              >
+              </motion.img>
+            </Link>
+
+
+            </motion.div>
+
+
+            </motion.div>
+
+
 
             <motion.div 
             className={`w-full h-full lg:p-24 md:p-10 p-4 flex justify-center text-center lg:text-start lg:justify-start ${Styles['contenedor-pageTerrenos']}` }
