@@ -1,11 +1,9 @@
 "use client"
 import { RxCaretLeft } from "react-icons/rx";
 import React, { useEffect, useState } from 'react';
-import { getTerreno } from '@/sanity/sanity-utils';
-import { TerrenosS } from '@/types/TerrenosS';
+import { getCasa } from '@/sanity/sanity-utils';
 
-import Styles from './terreno.module.css'
-import SwiperTerreno from "@/app/components/SwiperTerreno";
+import Styles from './casa.module.css'
 import Link from "next/link";
 
 import { FaMoneyCheckAlt } from "react-icons/fa";
@@ -15,17 +13,19 @@ import { motion } from "framer-motion";
 
 
 import Image from "next/image";
+import { CasasS } from "@/types/CasasS";
+import SwiperCasa from "@/app/components/SwiperCasa";
 
 type Props = {
-    params: { terreno: string };
+    params: { casa: string };
 };
 
-function Terreno({ params }: Props) {
-    const [terreno, setTerreno] = useState<TerrenosS | null>(null);
+function Casas({ params }: Props) {
+    const [casa, setCasa] = useState<CasasS | null>(null);
 
     useEffect(() => {
-        const fetchTerreno = async () => {
-            const slug = params.terreno;
+        const fetchCasa = async () => {
+            const slug = params.casa;
             console.log(slug);
 
             if (!slug) {
@@ -34,17 +34,17 @@ function Terreno({ params }: Props) {
             }
 
             try {
-                const fetchedTerreno = await getTerreno(slug);
-                setTerreno(fetchedTerreno);
+                const fetchedCasa = await getCasa(slug);
+                setCasa(fetchedCasa);
             } catch (error) {
-                console.error('Error fetching terreno:', error);
+                console.error('Error fetching casa:', error);
             }
         };
 
-        fetchTerreno();
-    }, [params.terreno]);
+        fetchCasa();
+    }, [params.casa]);
 
-    if (!terreno) {
+    if (!casa) {
         return (
           
             <div className=" h-screen w-full flex justify-center items-center bg-white">
@@ -93,27 +93,27 @@ function Terreno({ params }: Props) {
 
 
             <motion.div 
-            className={`w-full h-full lg:p-24 md:p-10 p-4 flex justify-center text-center lg:text-start lg:justify-start ${Styles['contenedor-pageTerrenos']}` }
+            className={`w-full h-full lg:p-24 md:p-10 p-4 flex justify-center text-center lg:text-start lg:justify-start ${Styles['contenedor-pageCasas']}` }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1.2 }}
             transition={{ duration: 0.7, ease: [0.6, 0.05, 0.5, 0.95] }}
             >
 
-             <div className={`flex flex-col lg:p-12 md:p-8 p-4 relative w-full h-full ${Styles['pageTerrenos-1']}` }>
+             <div className={`flex flex-col lg:p-12 md:p-8 p-4 relative w-full h-full ${Styles['pageCasas-1']}` }>
 
                 <div className="w-full h-auto text-black font-anton xl:text-4xl lg:text-3xl md:text-2xl text-xl">
-                     {terreno.nombre}
+                     {casa.nombre}
                 </div>
 
 
                 <div className="w-full h-full lg:pt-8 md:pt-4 pt-2 text-black font-oswald xl:text-2xl lg:text-xl md:text-lg text-lg space-y-4">
 
                     <h1 className="">
-                    {terreno.descripcion}
+                    {casa.descripcion}
                     </h1>
 
                   <div className="w-auto h-auto">
-                   <Link href={`https://wa.me/994661560?text=Hola!%20necesito%20información%20respecto%20al%20terreno:%20${terreno.nombre}`}>
+                   <Link href={`https://wa.me/994661560?text=Hola!%20necesito%20información%20respecto%20al%20terreno:%20${casa.nombre}`}>
                    <h1 className="font-kanit hover:text-blue-400 cursor-pointer">
                     Agendar una Visita ⟶
                     </h1>
@@ -127,11 +127,11 @@ function Terreno({ params }: Props) {
 
              </div>
              
-             <div className={`w-full xl:max-h-[550px] lg:max-h-[450px] max-h-[300px] flex ${Styles['pageTerrenos-2']}` }>
-                  <SwiperTerreno slug={params.terreno}/>
+             <div className={`w-full xl:max-h-[550px] lg:max-h-[450px] max-h-[300px] flex ${Styles['pageCasas-2']}` }>
+                  <SwiperCasa slug={params.casa}/>
             </div>
 
-             <div className={`w-full h-full ${Styles['pageTerrenos-3']}` }>
+             <div className={`w-full h-full ${Styles['pageCasas-3']}` }>
 
                 <div className="w-full h-full flex flex-wrap items-center justify-evenly">
 
@@ -146,7 +146,7 @@ function Terreno({ params }: Props) {
                    <div className="w-auto h-auto flex items-center">
 
                      <h1 className="text-black font-oswald xl:text-2xl lg:text-xl md:text-lg text-lg">
-                        {terreno.valor}
+                        {casa.valor}
                      </h1>
 
                    </div>
@@ -163,9 +163,9 @@ function Terreno({ params }: Props) {
 
                    <div className="w-auto h-auto flex items-center">
 
-                    <Link href={terreno?.ubicacionEnlace || '#'}>
+                    <Link href={casa?.ubicacionEnlace || '#'}>
                     <h1 className="text-black font-oswald xl:text-2xl lg:text-xl md:text-lg text-lg hover:border-b-2 hover:border-b-blue-400 hover:text-blue-400">
-                        {terreno.ubicacion}
+                        {casa.ubicacion}
                      </h1>
                     </Link>
 
@@ -186,7 +186,7 @@ function Terreno({ params }: Props) {
                    <div className="w-auto h-auto flex items-center">
 
                      <h1 className="text-black font-oswald xl:text-2xl lg:text-xl md:text-lg text-lg">
-                        {terreno.metrosCuadrados}
+                        {casa.metrosCuadrados}
                      </h1>
 
                    </div>
@@ -199,7 +199,7 @@ function Terreno({ params }: Props) {
 
              </div>
 
-             <div className={`w-full h-full ${Styles['pageTerrenos-4']}` }>
+             <div className={`w-full h-full ${Styles['pageCasas-4']}` }>
                  
                  <motion.div 
                  className="w-[70px] h-auto"
@@ -220,4 +220,4 @@ function Terreno({ params }: Props) {
     );
 }
 
-export default Terreno;
+export default Casas;

@@ -158,6 +158,7 @@ export async function getCasas() {
       "imagen_5": imagen_5.asset->url,
       "imagen_6": imagen_6.asset->url,
       nombre,
+      "slug": slug.current,
       valor,
       ubicacion,
       ubicacionEnlace,
@@ -257,6 +258,42 @@ export async function getTerreno(slug: string) {
       ubicacion,
       ubicacionEnlace,
       metrosCuadrados,
+      descripcion,
+      detalle
+    }`,
+    { slug }
+  )
+
+}
+
+export async function getCasa(slug: string) {
+
+
+  const client = createClient({
+    projectId,
+    dataset,
+    apiVersion,
+  })
+
+  return client.fetch(
+
+    groq`*[_type == "casas" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      "imagen_1": imagen_1.asset->url,
+      "imagen_2": imagen_2.asset->url,
+      "imagen_3": imagen_3.asset->url,
+      "imagen_4": imagen_4.asset->url,
+      "imagen_5": imagen_5.asset->url,
+      "imagen_6": imagen_6.asset->url,
+      nombre,
+      "slug": slug.current,
+      valor,
+      ubicacion,
+      ubicacionEnlace,
+      metrosCuadrados,
+      dormitorios,
+      banos,
       descripcion,
       detalle
     }`,

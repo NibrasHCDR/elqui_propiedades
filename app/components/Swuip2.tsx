@@ -21,6 +21,7 @@ import { FaBed, FaBath } from "react-icons/fa";
 
 import { getCasas } from '@/sanity/sanity-utils';
 import { CasasS } from '@/types/CasasS';
+import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 1;
@@ -32,12 +33,20 @@ export default function App() {
     async function fetchData() {
       try {
         const casas = await getCasas();
-        setCasas(casas);
+  
+        // Ordenar las casas por fecha de creación (_createdAt)
+        const casasOrdenadas = casas.sort((a: CasasS, b: CasasS) => {
+          const fechaA = new Date(a._createdAt || "").getTime();
+          const fechaB = new Date(b._createdAt || "").getTime();
+          return fechaB - fechaA; // Orden descendente, cambia a fechaA - fechaB para orden ascendente
+        });
+  
+        setCasas(casasOrdenadas);
       } catch (error) {
         console.error('Error al encontrar --Casas--:', error);
       }
     }
-
+  
     fetchData();
   }, []);
 
@@ -66,9 +75,20 @@ export default function App() {
           <IoLocationSharp className="w-[40px] h-[40px] text-black">
           </IoLocationSharp>
 
-          <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
-          {micasa.ubicacion}
-          </h1>
+          <div className="flex mt-auto">
+              {micasa.ubicacionEnlace ? (
+               <Link href={micasa.ubicacionEnlace as string}>
+                 <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold hover:text-blue-400">
+                   {micasa.ubicacion}
+                 </h1>
+               </Link>
+             ) : (
+                <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
+                 {micasa.ubicacion}
+                </h1>
+             )}
+           </div>
+
 
         </div>
 
@@ -141,9 +161,11 @@ export default function App() {
 
           <div className="flex space-x-2 w-full justify-center items-center">
             
+          <Link href={`/casas/${micasa.slug}`}>
           <h1 className={styles.button88}>
                    Ver más detalles
           </h1>
+          </Link>
 
 
           </div>

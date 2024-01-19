@@ -10,9 +10,10 @@ export type CasasS = {
     imagen_5: string;
     imagen_6: string;
     nombre: string; 
+    slug: string,
     valor: string;
     ubicacion: string;
-    ubiacionEnlace: string;
+    ubicacionEnlace: string;
     metrosCuadrados: string;
     dormitorios: string;
     banos: string;

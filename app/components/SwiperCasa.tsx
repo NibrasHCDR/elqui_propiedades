@@ -1,62 +1,59 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client"
 
-// SwiperTerreno.tsx
+// SwiperCasa.tsx
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper/modules';
-import { IoLocationSharp } from 'react-icons/io5';
-import { IoBed } from 'react-icons/io5';
-import { AiOutlineAreaChart } from 'react-icons/ai';
-import { TerrenosS } from '@/types/TerrenosS';
-import { getTerreno } from '@/sanity/sanity-utils';
+import { getCasa } from '@/sanity/sanity-utils';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import './styles.css';
+import { CasasS } from '@/types/CasasS';
 
 
-interface SwiperTerrenoProps {
+interface SwiperCasaProps {
   slug: string;
 }
 
-export default function SwiperTerreno({ slug }: SwiperTerrenoProps) {
-  const [terreno, setTerreno] = useState<TerrenosS | null>(null);
+export default function SwiperCasa({ slug }: SwiperCasaProps) {
+  const [casa, setCasa] = useState<CasasS | null>(null);
 
   useEffect(() => {
-    const fetchTerreno = async () => {
+    const fetchCasa = async () => {
       try {
-        const fetchedTerreno = await getTerreno(slug);
-        setTerreno(fetchedTerreno);
+        const fetchedCasa = await getCasa(slug);
+        setCasa(fetchedCasa);
       } catch (error) {
-        console.error('Error fetching terreno in SwiperTerreno:', error);
+        console.error('Error fetching casa in SwiperCasa:', error);
       }
     };
 
-    fetchTerreno();
+    fetchCasa();
   }, [slug]);
 
-  if (!terreno) {
+  if (!casa) {
     return <div className="w-full h-full">Loading...</div>;
   }
 
   const slides: JSX.Element[] = [];
 
   for (let index = 1; index <= 6; index++) {
-    const imagenKey = `imagen_${index}` as keyof TerrenosS;
+    const imagenKey = `imagen_${index}` as keyof CasasS;
 
-    if (terreno[imagenKey]) {
+    if (casa[imagenKey]) {
       slides.push(
         <SwiperSlide key={index} className="grid">
           <div className="flex w-full h-full">
             <div className="w-full h-full">
               <Image
-                src={terreno[imagenKey] as string}
+                src={casa[imagenKey] as string}
                 height={650}
                 width={650}
-                alt={terreno[imagenKey] as string}
+                alt={casa[imagenKey] as string}
                 layout={'cover'}
                 objectFit={'cover'}
                 className="w-full h-full cursor-grab no-select"

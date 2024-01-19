@@ -33,7 +33,15 @@ export default function App() {
     async function fetchData() {
       try {
         const terrenos = await getTerrenos();
-        setTerreno(terrenos);
+
+        // Ordenar los terrenos por fecha de creación (_createdAt)
+        const terrenosOrdenados = terrenos.sort((a: TerrenosS, b: TerrenosS) => {
+          const fechaA = new Date(a._createdAt || "").getTime();
+          const fechaB = new Date(b._createdAt || "").getTime();
+          return fechaB - fechaA; // Orden descendente, cambia a fechaA - fechaB para orden ascendente
+        });
+
+        setTerreno(terrenosOrdenados);
       } catch (error) {
         console.error('Error al encontrar --Terrenos--:', error);
       }
@@ -45,7 +53,7 @@ export default function App() {
   const slides = terreno.map((miterreno) => (
     <SwiperSlide key={miterreno._id} className={` ${style.swiperSlide}`}>
       <div 
-      className="flex flex-col pb-12 mb-10 space-y-1 bg-white p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
+      className="flex flex-col cursor-grab pb-12 mb-10 space-y-1 bg-white p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
 
         <div className="">
      
@@ -56,7 +64,7 @@ export default function App() {
             alt={miterreno.imagen_1}
             layout={'cover'}
             objectFit={'cover'}
-            className="w-full h-full cursor-grab no-select rounded-sm"
+            className="w-full h-full no-select rounded-sm"
           />
 
 
@@ -67,9 +75,19 @@ export default function App() {
           <IoLocationSharp className="w-[40px] h-[40px]">
           </IoLocationSharp>
 
-          <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
-          {miterreno.ubicacion}
-          </h1>
+           <div className="flex mt-auto">
+              {miterreno.ubicacionEnlace ? (
+               <Link href={miterreno.ubicacionEnlace as string}>
+                 <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold hover:text-blue-400">
+                   {miterreno.ubicacion}
+                 </h1>
+               </Link>
+             ) : (
+                <h1 className="mt-auto text-black xl:text-xl lg:text-lg text-sm font-bold">
+                 {miterreno.ubicacion}
+                </h1>
+             )}
+           </div>
 
         </div>
 

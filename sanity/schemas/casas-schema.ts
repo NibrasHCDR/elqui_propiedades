@@ -94,6 +94,13 @@ const casasSchema = {
         },
 
         {
+            name: 'slug',
+            title: 'Identificador',
+            type: 'slug',
+            options: { source: 'nombre'}
+        },
+
+        {
             name: 'valor',
             title: 'Valor de la Casa',
             type: 'string'
