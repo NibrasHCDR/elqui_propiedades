@@ -14,6 +14,13 @@ type Props = {}
 
 function Contact({}: Props) {
 
+  const [message, setMessage] = useState(false);
+
+  const messageClick = () => {
+    setMessage(true);
+    alert("Gracias por tu mensaje! Te responderemos lo antes posible");
+  };
+
   const [sitewizardSecction, setSitewizardSecction] = useState<ContactoS[]>([]); // Especifica el tipo de estado inicial aquí
 
   useEffect(() => {
@@ -72,7 +79,7 @@ function Contact({}: Props) {
              <div className="w-auto h-auto lg:pt-16">
 
                 <h1 className="text-center text-white font-kanit hover:text-black cursor-pointer hover:border-b-2 hover:border-black">
-                Enviar Correo ⟶
+                {seccioncontacto.titulo1}
                 </h1>
                    
               </div>
@@ -188,43 +195,58 @@ function Contact({}: Props) {
 
             <div className="flex flex-col w-full h-full">
 
+              <form action="https://formsubmit.co/valeperaltatorres@gmail.com" method='POST'>
+
               <div className="w-full h-auto space-y-4">
 
                 <input 
+                placeholder={seccioncontacto.nombre} 
+                type='text' 
+                name="nombre"
                 className=" text-black w-full border-2 rounded-md p-2"
-                value={seccioncontacto.nombre}>
+                required>
                 </input>
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
-                value={seccioncontacto.telefonoCorreo}>
+                placeholder={seccioncontacto.telefonoCorreo} 
+                type='text' 
+                name="Email"
+                required>
                 </input>
 
                 <input 
                 className=" text-black w-full border-2 rounded-md p-2"
-                value={seccioncontacto.asunto}>
+                placeholder={seccioncontacto.asunto} 
+                type='text' 
+                name="asunto"
+                required>
                 </input>
 
                 <textarea
                 className="text-black w-full lg:min-h[240px] lg:max-h-[240px] md:min-h-[240px] md:max-h-[240px] min-h-[200px] max-h-[200px] border-2 rounded-md p-2"
-                value={seccioncontacto.mensaje}>
+                placeholder={seccioncontacto.mensaje}
+                name="mensaje"
+                required>
                 </textarea>
 
              <div className="w-auto h-auto flex space-x-3 justify-center items-center">
 
               <div className="w-auto h-full">
 
-              <h1 className={` ${styles.button88}`}>
+              <button onClick={messageClick} type='submit' className={` ${styles.button88}`}>
                    Enviar Mensaje
-              </h1>
+              </button>
+
+
 
               </div>
 
-
-               
             </div>
 
               </div>
+
+              </form>
 
 
             </div>

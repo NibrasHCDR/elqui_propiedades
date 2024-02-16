@@ -3,6 +3,13 @@ const portadaSchema = {
     title: 'Portada',
     type: 'document',
     fields: [
+
+        {
+            name: 'id_seccion',
+            title: 'Nombre de la Sección',
+            type: 'string'
+        },
+        
         {
             name: 'fondo',
             title: 'Imagen de Fondo',

@@ -1,6 +1,6 @@
 const casasSchema = {
     name: 'casas',
-    title: '*Casas Publicadas',
+    title: '+ Casas Publicadas',
     type: 'document',
     fields: [
         {

@@ -5,6 +5,12 @@ const seccion2Schema = {
     fields: [
 
         {
+            name: 'id_seccion',
+            title: 'Nombre de la Sección',
+            type: 'string'
+        },
+
+        {
             name: 'titulo1',
             title: 'Título 1',
             type: 'string'

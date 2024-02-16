@@ -93,7 +93,7 @@ function Terreno({ params }: Props) {
 
 
             <motion.div 
-            className={`w-full h-full lg:p-24 md:p-10 p-4 flex justify-center text-center lg:text-start lg:justify-start ${Styles['contenedor-pageTerrenos']}` }
+            className={`w-full h-full lg:p-24 md:p-24 px-4 pt-24 flex justify-center text-center lg:text-start lg:justify-start ${Styles['contenedor-pageTerrenos']}` }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1.2 }}
             transition={{ duration: 0.7, ease: [0.6, 0.05, 0.5, 0.95] }}

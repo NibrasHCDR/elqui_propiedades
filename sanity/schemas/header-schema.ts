@@ -4,6 +4,12 @@ const headerSchema = {
     type: 'document',
     fields: [
         {
+            name: 'id_seccion',
+            title: 'Nombre de la Sección',
+            type: 'string'
+        },
+        
+        {
             name: 'logo',
             title: 'Logo',
             type: 'image',

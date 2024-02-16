@@ -5,6 +5,12 @@ const contactoSchema = {
     fields: [
 
         {
+            name: 'id_seccion',
+            title: 'Nombre de la Sección',
+            type: 'string'
+        },
+
+        {
             name: 'titulo1',
             title: 'Título de Correo (correo)',
             type: 'string'

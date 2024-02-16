@@ -36,7 +36,8 @@ function Inicio({}: Props) {
     <div 
     key={seccion._id}
     className="w-full h-screen bg-bottom bg-cover " style={{
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.postimg.cc/nhtYpTkN/bg1.jpg')`
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+      url('${seccion.fondo}')`
     }}>
 
         <div className="w-full h-full lg:p-24 md:p-10 p-4 no-select">

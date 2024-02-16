@@ -55,7 +55,7 @@ export default function App() {
       <div 
       className="flex flex-col cursor-grab pb-12 mb-10 space-y-1 bg-white p-4 rounded-md border border-gray-400 shadow-md rounded-t-lg overflow-hidden transition-all hover:border-black hover:shadow-black">
 
-        <div className="">
+        <div className="w-full h-full">
      
           <Image
             src={miterreno.imagen_1}

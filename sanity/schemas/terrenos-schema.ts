@@ -1,6 +1,6 @@
 const terrenosSchema = {
     name: 'terrenos',
-    title: '*Terrenos Publicados',
+    title: '+ Terrenos Publicados',
     type: 'document',
     fields: [
         {

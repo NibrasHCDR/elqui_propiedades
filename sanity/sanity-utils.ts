@@ -1,9 +1,6 @@
 
 import { createClient, groq } from "next-sanity";
-import { revalidatePath } from "next/cache";
-
 import {apiVersion, dataset, projectId} from '../sanity/env'
-import { TerrenosS } from "@/types/TerrenosS";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 1;
