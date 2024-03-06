@@ -98,7 +98,7 @@ function Contact({}: Props) {
 
             <h1 className="text-white">
 
-            © 2024 Equi Propiedades | Code By  
+            © 2024 Elqui Propiedades | Code By  
 
             </h1>
 
